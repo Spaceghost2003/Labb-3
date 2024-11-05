@@ -36,18 +36,13 @@ namespace Labb_3.ViewModel
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += Timer_Tick;
-            //timer.Start();
-            UpdateButtonCommand = new DelegateCommand(UpdateButton);
+
 
         }
 
 
 
-        private void UpdateButton(object obj)
-        {
-            TestData += "x";
-            UpdateButtonCommand.RaiseCanExecuteChanged();
-        }
+
 
         private void Timer_Tick(Object? sender, EventArgs e)
         {

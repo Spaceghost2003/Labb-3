@@ -40,22 +40,41 @@
          
         </ListBox>
 
-
+<!--input för frågor-->
         <StackPanel Grid.Row="1" Grid.Column="1" Margin="10">
             <TextBlock Text="Question:" FontWeight="Bold" Margin="0,0,0,5"/>
-            <TextBox Text="New Question" Height="60" Margin="0,0,0,10"/>
+            <TextBox
+                Text="{Binding Query,UpdateSourceTrigger=PropertyChanged}"
+                Name="inputQuestion"
+                Height="60" 
+                Margin="0,0,0,10"/>
 
-            <TextBlock Text="Correct Answer:" FontWeight="Bold" Margin="0,0,0,5"/>
-            <TextBox Height="30" Margin="0,0,0,10"/>
+            <TextBlock  Text="Correct Answer:" FontWeight="Bold" Margin="0,0,0,5"/>
+            <TextBox Text="{Binding CorrectAnswer,UpdateSourceTrigger=PropertyChanged}"
+                Name="answer1"
+                Height="30"
+                Margin="0,0,0,10"/>
 
             <TextBlock Text="First Incorrect Answer:" FontWeight="Bold" Margin="0,0,0,5"/>
-            <TextBox Height="30" Margin="0,0,0,10"/>
+            <TextBox 
+                Text="{Binding IncorrectAnswer1,UpdateSourceTrigger=PropertyChanged}"
+                Name="answer2" 
+                Height="30" 
+                Margin="0,0,0,10"/>
 
-            <TextBlock Text="Second Incorrect Answer:" FontWeight="Bold" Margin="0,0,0,5"/>
-            <TextBox Height="30" Margin="0,0,0,10"/>
+            <TextBlock  Text="Second Incorrect Answer:" FontWeight="Bold" Margin="0,0,0,5"/>
+            <TextBox
+                Text="{Binding IncorrectAnswer2,UpdateSourceTrigger=PropertyChanged}"
+                Name="answer3" 
+                Height="30"
+                Margin="0,0,0,10"/>
 
             <TextBlock Text="Third Incorrect Answer:" FontWeight="Bold" Margin="0,0,0,5"/>
-            <TextBox Height="30" Margin="0,0,0,10"/>
+            <TextBox 
+                Text="{Binding IncorrectAnswer3,UpdateSourceTrigger=PropertyChanged}"
+                Name="answer4" 
+                Height="30" 
+                Margin="0,0,0,10"/>
         </StackPanel>
     </Grid>
 </UserControl>

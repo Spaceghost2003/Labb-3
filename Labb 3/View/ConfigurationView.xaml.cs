@@ -23,6 +23,7 @@ namespace Labb_3.View
         public ConfigurationView()
         {
             InitializeComponent();
+            
         }
     }
 }
