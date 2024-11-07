@@ -26,9 +26,6 @@ namespace Labb_3.ViewModel
 
         }
 
-
-
-
         private void Timer_Tick(Object? sender, EventArgs e)
         {
 

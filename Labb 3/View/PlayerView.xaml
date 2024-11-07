@@ -13,8 +13,5 @@
         <Button Content="Button" HorizontalAlignment="Left" Margin="396,132,0,0" VerticalAlignment="Top" Height="75" Width="110"/>
         <Button Content="Button" HorizontalAlignment="Left" Margin="262,224,0,0" VerticalAlignment="Top" Height="75" Width="110"/>
         <Button Content="Button" HorizontalAlignment="Left" Margin="396,224,0,0" VerticalAlignment="Top" Height="75" Width="110"/>
-
-
     </Grid>
-
 </UserControl>

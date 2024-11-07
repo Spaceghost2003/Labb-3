@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Labb_3.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -16,5 +17,6 @@ namespace Labb_3.ViewModel
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
     }
 }

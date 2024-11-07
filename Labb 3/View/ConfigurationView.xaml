@@ -6,7 +6,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Labb_3.View"
              mc:Ignorable="d" 
-             DataContext="{Binding ConfigurationViewModel}"
              d:DesignHeight="450" d:DesignWidth="800"
 >
     <Grid>
@@ -32,25 +31,20 @@
             </StackPanel>
         </StackPanel>
 
-        <!--<ListBox ItemsSource="{Binding Questions}" 
-                 Grid.Row="1" Grid.Column="0" Margin="10">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>-->
 
-        <ListBox ItemsSource="{Binding ConfigurationViewModel}"
-         Grid.Row="1" Grid.Column="0" Margin="10">
+
+        <ListBox Grid.Row="1" Grid.Column="0" Margin="10" >
             <StackPanel>
-                <!-- Display only the question text or the full query -->
-                <TextBlock Text="{Binding QuestionText}" FontWeight="Bold"/>
-                <TextBlock Text="test" FontWeight="Bold"/>
-                <TextBlock Text="test" FontWeight="Bold"/>
+                <!-- Display the question text -->
+                <ListBoxItem Content="Question:" FontWeight="Bold" Margin="0,0,0,2"/>
+                <TextBlock Text="{Binding Question2.Query}"   Margin="0,0,0,2"/>
+                <TextBlock Text="Question:" FontWeight="Bold" Margin="0,0,0,2"/>
+                <TextBlock Text="{Binding Question1.Query}"   Margin="0,0,0,2"/>
+                <TextBlock Text="{Binding Question3.Query}"   Margin="0,0,0,2"/>
             </StackPanel>
         </ListBox>
+
+
 
         <!--input för frågor-->
         <StackPanel Grid.Row="1" Grid.Column="1" Margin="10">
