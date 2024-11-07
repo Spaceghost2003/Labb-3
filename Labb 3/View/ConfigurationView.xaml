@@ -1,13 +1,92 @@
 ﻿<UserControl x:Class="Labb_3.View.ConfigurationView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Labb_3.View"
-             DataContext="{Binding ConfigurationViewModel}"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             DataContext="{Binding ConfigurationViewModel}"
+             d:DesignHeight="450" d:DesignWidth="800"
+>
     <Grid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Margin="10">
+            <TextBlock Text="Default Question Pack" FontWeight="Bold" VerticalAlignment="Center" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,0,0,0">
+                <Button Width="20" Height="20" Margin="5" Content="{fa:Icon sliders}"/>
+
+                <Button Width="20" Height="20" Margin="5" Content="{fa:Icon plus}"
+                        Command="{Binding AddQueryCommand}" DataContext="{Binding ConfigurationViewModel}"
+                        />
+                <Button Width="20" Height="20" Margin="5" Content="{fa:Icon minus}" />
+            </StackPanel>
+        </StackPanel>
+
+        <!--<ListBox ItemsSource="{Binding Questions}" 
+                 Grid.Row="1" Grid.Column="0" Margin="10">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>-->
+
+        <ListBox ItemsSource="{Binding ConfigurationViewModel}"
+         Grid.Row="1" Grid.Column="0" Margin="10">
+            <StackPanel>
+                <!-- Display only the question text or the full query -->
+                <TextBlock Text="{Binding QuestionText}" FontWeight="Bold"/>
+                <TextBlock Text="test" FontWeight="Bold"/>
+                <TextBlock Text="test" FontWeight="Bold"/>
+            </StackPanel>
+        </ListBox>
+
+        <!--input för frågor-->
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="10">
+            <TextBlock Text="Question:" FontWeight="Bold" Margin="0,0,0,5"/>
+            <TextBox
+                Text="{Binding Query,UpdateSourceTrigger=PropertyChanged}"
+                Name="inputQuestion"
+                Height="60" 
+                Margin="0,0,0,10"/>
+
+            <TextBlock  Text="Correct Answer:" FontWeight="Bold" Margin="0,0,0,5"/>
+            <TextBox Text="{Binding CorrectAnswer,UpdateSourceTrigger=PropertyChanged}"
+                Name="answer1"
+                Height="30"
+                Margin="0,0,0,10"/>
+
+            <TextBlock Text="First Incorrect Answer:" FontWeight="Bold" Margin="0,0,0,5"/>
+            <TextBox 
+                Text="{Binding IncorrectAnswer1,UpdateSourceTrigger=PropertyChanged}"
+                Name="answer2" 
+                Height="30" 
+                Margin="0,0,0,10"/>
+
+            <TextBlock  Text="Second Incorrect Answer:" FontWeight="Bold" Margin="0,0,0,5"/>
+            <TextBox
+                Text="{Binding IncorrectAnswer2,UpdateSourceTrigger=PropertyChanged}"
+                Name="answer3" 
+                Height="30"
+                Margin="0,0,0,10"/>
+
+            <TextBlock Text="Third Incorrect Answer:" FontWeight="Bold" Margin="0,0,0,5"/>
+            <TextBox 
+                Text="{Binding IncorrectAnswer3,UpdateSourceTrigger=PropertyChanged}"
+                Name="answer4" 
+                Height="30" 
+                Margin="0,0,0,10"/>
+        </StackPanel>
     </Grid>
 </UserControl>

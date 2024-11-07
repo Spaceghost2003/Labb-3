@@ -20,7 +20,5 @@ namespace Labb_3.Model
         public  string CorrectAnswer { get; set; }
 
         public string[] IncorrectAnswers { get; set; }
-
-        
     }
 }

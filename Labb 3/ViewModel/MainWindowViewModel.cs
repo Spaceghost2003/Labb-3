@@ -35,6 +35,5 @@ namespace Labb_3.ViewModel
 
 			ActivePack = new QuestionPackViewModel(new Model.QuestionPack("My Question Pack"));
         }
-
 	}
 }

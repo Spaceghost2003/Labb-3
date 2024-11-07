@@ -24,5 +24,7 @@ namespace Labb_3.View
         {
             InitializeComponent();
         }
+
+
     }
 }

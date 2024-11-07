@@ -9,13 +9,20 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        
-        <Button Grid.Row="1"
+        <Button  HorizontalAlignment="Left" Margin="262,132,0,0" VerticalAlignment="Top" Height="75" Width="110" Command="{Binding UpdateButtonCommand}"  Content="{Binding Path=TestData}"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="396,132,0,0" VerticalAlignment="Top" Height="75" Width="110"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="262,224,0,0" VerticalAlignment="Top" Height="75" Width="110"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="396,224,0,0" VerticalAlignment="Top" Height="75" Width="110"/>
+
+        <!--<Button Grid.Row="1"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center"
                 Content="{Binding Path=TestData}"
                 Margin="10"
                 Command="{Binding UpdateButtonCommand}"
-                />
+                />-->
+
+
     </Grid>
+
 </UserControl>

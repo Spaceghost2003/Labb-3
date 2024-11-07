@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Labb_3.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Labb_3.ViewModel
 {
@@ -12,9 +14,15 @@ namespace Labb_3.ViewModel
 
 
 
+        public ICommand AddQueryCommand { get; }
+
+
+
         public ConfigurationViewModel(MainWindowViewModel? mainWindowViewModel)
         {
             this.mainWindowViewModel = mainWindowViewModel;
         }
+
+
     }
 }

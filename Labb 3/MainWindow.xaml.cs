@@ -23,5 +23,7 @@ namespace Labb_3
             DataContext = new MainWindowViewModel();
 
         }
+
+
     }
 }
