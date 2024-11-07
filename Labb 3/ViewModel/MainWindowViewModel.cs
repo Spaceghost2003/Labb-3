@@ -1,10 +1,13 @@
-﻿using System;
+﻿using Labb_3.Command;
+using Labb_3.Model;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Labb_3.ViewModel
 {
@@ -12,12 +15,29 @@ namespace Labb_3.ViewModel
     {
         public ObservableCollection<QuestionPackViewModel> Packs { get; set; }
 
-		public ConfigurationViewModel ConfigurationViewModel { get; }
+        public ICommand MakeNewPack { get; }
+
+        public MainWindowViewModel()
+        {
+			MakeNewPack = new DelegateCommand(param => Console.WriteLine("Simple command executed.")); ; 
+        }
+
+        public ConfigurationViewModel ConfigurationViewModel { get; }
         public PlayerViewModel PlayerViewModel { get;}
 
         private QuestionPackViewModel? _activePack;
 
-		public QuestionPackViewModel? ActivePack
+		Question question = new Question("what?", "", "", "", "");
+        Question question2 = new Question("what?", "", "", "", "");
+        Question question3 = new Question("what?", "", "", "", "");
+
+		QuestionPack myQuestionPack = new QuestionPack("abc", Difficulty.Medium, 30)
+		{
+
+		};
+
+		
+        public QuestionPackViewModel? ActivePack
 		{
 			get => _activePack;
 			set 
@@ -28,12 +48,16 @@ namespace Labb_3.ViewModel
 			}
 		}
 
-		public MainWindowViewModel()
-		{
-			ConfigurationViewModel = new ConfigurationViewModel(this);
-			PlayerViewModel = new PlayerViewModel(this);
 
-			ActivePack = new QuestionPackViewModel(new Model.QuestionPack("My Question Pack"));
-        }
+
+		public  void AddPack()
+		{
+			Console.WriteLine("Hej");
+		}
+
+		public static bool CanAddPack()
+		{
+			return true;
+		}
 	}
 }

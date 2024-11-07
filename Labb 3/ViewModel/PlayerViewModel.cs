@@ -11,14 +11,7 @@ namespace Labb_3.ViewModel
 {
     internal class PlayerViewModel : ViewModelBase
     {
-        public string TestData {
-            get => _testData;
-            private set 
-            {
-                _testData = value;
-                RaisePropertyChanged();
-            }
-        }
+
 
         public DelegateCommand UpdateButtonCommand { get; }
 
@@ -29,29 +22,16 @@ namespace Labb_3.ViewModel
 
         public PlayerViewModel(MainWindowViewModel? mainWindowViewModel)
         {
-            this.mainWindowViewModel = mainWindowViewModel;
 
-            TestData = "Start value";
-
-            timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
-            timer.Tick += Timer_Tick;
-            //timer.Start();
-            UpdateButtonCommand = new DelegateCommand(UpdateButton);
 
         }
 
 
 
-        private void UpdateButton(object obj)
-        {
-            TestData += "x";
-            UpdateButtonCommand.RaiseCanExecuteChanged();
-        }
 
         private void Timer_Tick(Object? sender, EventArgs e)
         {
-            TestData += "x";
+
         }
     }
 }

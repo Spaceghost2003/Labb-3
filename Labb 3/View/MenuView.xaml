@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
              xmlns:local="clr-namespace:Labb_3.View"
+             DataContext="{Binding MainWindowViewModel}"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -12,7 +13,10 @@
             <MenuItem Header="_File" >
 
                 <MenuItem Header="_New Question Pack" 
-                          Icon="{fa:Icon floppyDisk}"/>
+                          Icon="{fa:Icon floppyDisk}"
+                        
+                          Command="{Binding MakeNewpack}"
+                          />
 
                 <Separator />
 

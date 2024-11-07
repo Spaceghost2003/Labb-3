@@ -22,6 +22,8 @@ namespace Labb_3.Command
             this.canExecute = canExecute;
         }
 
+
+
         public void RaiseCanExecuteChanged() => CanExecuteChanged.Invoke(this, EventArgs.Empty);
 
         public bool CanExecute(object? parameter) => canExecute is null ? true : canExecute(parameter);

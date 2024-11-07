@@ -23,6 +23,6 @@ namespace Labb_3.Model
 
         public  int TimeLimitInSeconds { get; set; }
 
-        public List<Question> Questions { get; set; }
+        public List<Question> Questions { get; set; } 
     }
 }
