@@ -45,7 +45,10 @@ namespace Labb_3.ViewModel
 
             }
         }
-
+       public MainWindowViewModel()
+        {
+            AddQueryCommand = new DelegateCommand(AddQuery);
+        }
         public string IncorrectAnswer1
         {
             get => _incorrectAnswer1;
@@ -79,12 +82,11 @@ namespace Labb_3.ViewModel
             }
         }
 
-        public ICommand AddQueryCommand { get; }
+        public DelegateCommand AddQueryCommand { get; }
 
-        public MainWindowViewModel()
-        {
-			AddQueryCommand = new DelegateCommand(param => AddQuery()); ; 
-        }
+       
+		
+        
 
         public ConfigurationViewModel ConfigurationViewModel { get; }
         public PlayerViewModel PlayerViewModel { get;}
@@ -95,7 +97,12 @@ namespace Labb_3.ViewModel
         Question question2 = new Question("Who is the president of the US?", "Joe Biden", "Michael Jackson", "Hilary Clinton", "Scooby Doo");
         Question question3 = new Question("How many legs does a dog have", "Four", "One", "Two", "Three");
 
-        List<Question> myList = new List<Question>();    
+        public List<Question> myList = new List<Question>();
+        
+        public void add(Question test)
+        {
+            myList.Add(test);
+        }
  
 
         QuestionPack myQuestionpack = new QuestionPack("DefaultPack")
@@ -140,9 +147,11 @@ namespace Labb_3.ViewModel
 		}
 
 
-		public  void AddQuery()
+		public  void AddQuery(object? obj)
 		{
+
             Question newQuestion = new Question(Query, CorrectAnswer, IncorrectAnswer1, IncorrectAnswer2, IncorrectAnswer3);
+            myList.Add(newQuestion);
             myQuestionPack.Questions.Add(newQuestion);
         }
 

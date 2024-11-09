@@ -35,12 +35,10 @@
 
         <ListBox Grid.Row="1" Grid.Column="0" Margin="10" >
             <StackPanel>
-                <!-- Display the question text -->
-                <ListBoxItem Content="Question:" FontWeight="Bold" Margin="0,0,0,2"/>
-                <TextBlock Text="{Binding Question2.Query}"   Margin="0,0,0,2"/>
-                <TextBlock Text="Question:" FontWeight="Bold" Margin="0,0,0,2"/>
-                <TextBlock Text="{Binding Question1.Query}"   Margin="0,0,0,2"/>
-                <TextBlock Text="{Binding Question3.Query}"   Margin="0,0,0,2"/>
+                <ListBox>
+                    <ListBoxItem Content="{Binding myList}"/>
+                </ListBox>
+            
             </StackPanel>
         </ListBox>
 
